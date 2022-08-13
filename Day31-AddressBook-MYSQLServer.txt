@@ -1,0 +1,4 @@
+UC1 - Ability to create a Address Book Service DB
+->create database addressbookservice;
+->show databases;
+
