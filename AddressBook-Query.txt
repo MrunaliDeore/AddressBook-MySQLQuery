@@ -1,10 +1,10 @@
-UC6 - Ability to Retrieve Person belonging to a City or State from the Address Book 
-mysql> select *
+UC7 - Ability to understand the size of address book by City and State(size is count)
+mysql> select count(*)
     -> from AddressBook
-    -> where city='pune';
-+----------------+---------------+--------------+-----------+----------+-------+-------------------+-----------------------------+--------+
-| firstname | lastname | address  | city     | state  | zip   | phnno         | email                    | abid  |
-+----------------+---------------+--------------+-----------+----------+-------+-------------------+-----------------------------+--------+
-| ketan        | pawar     | fdgdh      | pune   | maha | 444  | 112457896 | ketan@gmail.com |  103  |
-+----------------+--------------+----------------+----------+----------+--------+-------------------+-----------------------------+--------+
-1 row in set (0.06 sec)
+    -> where city is not null;
++--------------+
+| count(*)  |
++--------------+
+|        4      |
++--------------+
+1 row in set (0.05 sec)
