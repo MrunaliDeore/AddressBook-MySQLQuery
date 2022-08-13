@@ -1,10 +1,13 @@
-UC7 - Ability to understand the size of address book by City and State(size is count)
-mysql> select count(*)
+UC8 - Ability to retrieve entries sorted alphabetically by Person’s name for a given city
+mysql> select *
     -> from AddressBook
-    -> where city is not null;
-+--------------+
-| count(*)  |
-+--------------+
-|        4      |
-+--------------+
-1 row in set (0.05 sec)
+    -> order by city ASC;
++-----------------+----------------+------------+--------------+---------+-------+------------------+----------------------------------+------+
+| firstname | lastname | address | city        | state   | zip  | phnno        | email                          | abid |
++----------------+----------------+-------------+-------------+----------+--------+------------------+---------------------------------+------+
+| bhavesh   | patil         | dhhdh   | dhule     | maha  | 124 | 442454546 | bhavesh@gmail.com |  105 |
+| neha         | patil         | dhhdh   | mumbai | maha  | 124 | 442457896 | neha@gmail.com      |  104 |
+| nikki        | jdhav        | Groad   | nagpur   | maha  | 123 |   1125678   | niki@gmail.com        |  102 |
+| ketan        | pawar       | fdgdh   | pune      | maha  | 444 | 112457896 | ketan@gmail.com     |  103 |
++-----------------+-----------------+-----------+--------------+----------+-------+--------------------+---------------------------------+------+
+4 rows in set (0.12 sec)
