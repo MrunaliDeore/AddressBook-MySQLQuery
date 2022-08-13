@@ -1,10 +1,19 @@
-UC10 - Ability to get number of contact persons (i.e. count by type)
-mysql> select count(*)
-    -> from AddressBook
-    -> where type='Friend';
-+----------+
-| count(*) |
-+----------+
-|        2 |
-+----------+
-1 row in set (0.04 sec)
+UC11 - Ability to add person to both Friend and Family
+mysql> insert into AddressBook values('deepak','patil','sproad','pune','maha',123,45788923,'deepak@gmail.com',106,'RRR','Family')
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into AddressBook values('ankita','Kale','prasadcircle','sangli','maha',223,45454512,'anki@gmail.com',107,'HGFD','Fr
+Query OK, 1 row affected (0.27 sec)
+
+mysql> select * from AddressBook;
++----------------+--------------+-----------------+-------------+-----------+-------+----------------+--------------------------------+---------+----------------+------------+
+| firstname  | lastname | address      | city        | state   | zip  | phnno       | email                        | abid | bookname | type       |
++---------------+---------------+-----------------+-------------+----------+-------+-----------------+-------------------------------+---------+-----------------+------------+
+| nikki       | jdhav       | Groad       | nagpur   | maha  | 123 |   1125678   | niki@gmail.com       |  102  | ABC          | Family     |
+| ketan      | pawar      | fdgdh        | pune      | maha  | 444 | 112457896 | ketan@gmail.com     |  103 | XYZ           | Friend     |
+| neha       | patil        | dhhdh        | mumbai | maha  | 124 | 442457896 | neha@gmail.com      |  104 | SSS            | Profession |
+| bhavesh  | patil        | dhhdh        | dhule     | maha  | 124 | 442454546 | bhavesh@gmail.com |  105 | ERT           | Friend     |
+| deepak   | patil        | sproad        | pune      | maha  | 123 |  45788923 | deepak@gmail.com   |  106 | RRR           | Family     |
+| ankita     | Kale        | prasadcircle | sangli     | maha  | 223 |  45454512 | anki@gmail.com       |  107 | HGFD         | Friend     |
++--------------+---------------+------------------+--------------+----------+-------+------------------+-------------------------------+------+-------------------+------------+
+6 rows in set (0.00 sec)
