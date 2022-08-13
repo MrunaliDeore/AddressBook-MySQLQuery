@@ -1,17 +1,15 @@
-UC4 - Ability to edit existing contact person using their name
-mysql> update AddressBook
-    -> set address='jehan circle'
+UC5 - Ability to delete a person using person's name 
+mysql> delete from AddressBook
     -> where firstname='Mrunali';
 Query OK, 1 row affected (0.12 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> select * from AddressBook;
-+---------------+-----------------+--------------+----------+---------+----------+---------------+----------------------------------+------+
-| firstname | lastname | address    | city   | state | zip       | phnno     | email                         | abid |
-+---------------+-----------------+--------------+----------+---------+----------+-------------+-------------------+-----------------+
-| Mrunali  | deore   | jehan circle | nsk   	  | maha  | 123 |  12345678 | mru@gmail.com        |  101 |
-| nikki     	| jdhav   | Groad          | nagpur  | maha  | 123 |   1125678   | niki@gmail.com        |  102 |
-| ketan     | pawar  | fdgdh           | pune   	  | maha  | 444 | 112457896 | ketan@gmail.com     |  103 |
-| neha      	| patil    | dhhdh          | mumbai | maha  | 124 | 442457896 | neha@gmail.com      |  104 |
-| bhavesh | patil    | dhhdh          | dhule     | maha  | 124 | 442454546 | bhavesh@gmail.com |  105 |
-+-----------+----------+--------------+--------+-------+-----+-----------+-------------------+------+--------------------------------+--------+
++-----------------+---------------+-------------+-------------+-----------+-----+-------------------+-----------------------------+--------+
+| firstname | lastname | address | city         | state  | zip | phnno         | email                     | abid |
++-----------------+---------------+------------+--------------+-----------+-----+-------------------+------------------------------+--------+
+| nikki       | jdhav      | Groad      | nagpur   | maha  | 123 |   1125678 | niki@gmail.com       |  102 |
+| ketan      | pawar     | fdgdh       | pune      | maha  | 444 | 112457896 | ketan@gmail.com  |  103 |
+| neha       | patil        | dhhdh      | mumbai | maha  | 124 | 442457896 | neha@gmail.com    |  104 |
+| bhavesh | patil        | dhhdh      | dhule     | maha  | 124 | 442454546 | bhavesh@gmail.com |  105 |
++---------------+----------------+-------------+--------+-------+--------+-----------------+-----------------------+---------+
+4 rows in set (0.00 sec)
