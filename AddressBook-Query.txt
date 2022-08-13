@@ -1,15 +1,10 @@
-UC5 - Ability to delete a person using person's name 
-mysql> delete from AddressBook
-    -> where firstname='Mrunali';
-Query OK, 1 row affected (0.12 sec)
-
-mysql> select * from AddressBook;
-+-----------------+---------------+-------------+-------------+-----------+-----+-------------------+-----------------------------+--------+
-| firstname | lastname | address | city         | state  | zip | phnno         | email                     | abid |
-+-----------------+---------------+------------+--------------+-----------+-----+-------------------+------------------------------+--------+
-| nikki       | jdhav      | Groad      | nagpur   | maha  | 123 |   1125678 | niki@gmail.com       |  102 |
-| ketan      | pawar     | fdgdh       | pune      | maha  | 444 | 112457896 | ketan@gmail.com  |  103 |
-| neha       | patil        | dhhdh      | mumbai | maha  | 124 | 442457896 | neha@gmail.com    |  104 |
-| bhavesh | patil        | dhhdh      | dhule     | maha  | 124 | 442454546 | bhavesh@gmail.com |  105 |
-+---------------+----------------+-------------+--------+-------+--------+-----------------+-----------------------+---------+
-4 rows in set (0.00 sec)
+UC6 - Ability to Retrieve Person belonging to a City or State from the Address Book 
+mysql> select *
+    -> from AddressBook
+    -> where city='pune';
++----------------+---------------+--------------+-----------+----------+-------+-------------------+-----------------------------+--------+
+| firstname | lastname | address  | city     | state  | zip   | phnno         | email                    | abid  |
++----------------+---------------+--------------+-----------+----------+-------+-------------------+-----------------------------+--------+
+| ketan        | pawar     | fdgdh      | pune   | maha | 444  | 112457896 | ketan@gmail.com |  103  |
++----------------+--------------+----------------+----------+----------+--------+-------------------+-----------------------------+--------+
+1 row in set (0.06 sec)
