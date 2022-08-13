@@ -1,22 +1,10 @@
-UC9 - Ability to identify each Address Book with name and
-Type. - Here the type could Family, Friends, Profession, etc
-          - Alter Address Book to add name and type
-mysql> alter table AddressBook
-    -> add booknamevarchar(25);
-Query OK, 0 rows affected (1.24 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-mysql> alter table AddressBook
-    -> add type varchar(25);
-Query OK, 0 rows affected (1.24 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-mysql> select * from AddressBook;
-+----------------+---------------+--------------+------------+----------+--------+-----------------+---------------------------------+--------+-----------------+--------------+
-| firstname | lastname | address | city       | state   | zip   | phnno       | email                         | abid | bookname | type       |
-+----------------+---------------+-------------+-------------+----------+--------+-----------------+---------------------------------+------+---------------------+------------+
-| nikki         | jdhav      | Groad   | nagpur   | maha  | 123 |   1125678   | niki@gmail.com        |  102 | ABC           | Family     |
-| ketan        | pawar      | fdgdh   | pune      | maha  | 444 | 112457896 | ketan@gmail.com     |  103 | XYZ            | Friend     |
-| neha         | patil        | dhhdh   | mumbai | maha  | 124 | 442457896 | neha@gmail.com      |  104 | SSS             | Profession |
-| bhavesh   | patil        | dhhdh   | dhule     | maha  | 124 | 442454546 | bhavesh@gmail.com |  105 | ERT            | Friend     |
-+----------------+--------------+--------------+-------------+-----------+-------+-------------------+---------------------------------+------+-------------------+------------+
-4 rows in set (0.00 sec)
+UC10 - Ability to get number of contact persons (i.e. count by type)
+mysql> select count(*)
+    -> from AddressBook
+    -> where type='Friend';
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.04 sec)
